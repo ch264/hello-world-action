@@ -24,16 +24,48 @@ const github = require('@actions/github');
 //   core.setFailed(error.message);
 // }
 
-'use strict';
+try {
+  var proxyUrl = "https://cors-anywhere.herokuapp.com/";
+  var url="https://learning.getpostman.com/"
 
-var markdownLinkCheck = require('markdown-link-check');
+  function urlExists(url, callback) {
+    var sameOriginURL = proxyUrl + url;
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState === 4) {
+        callback(xhr.status < 400);
+      }
+    };
+    xhr.open('HEAD', sameOriginURL);
+    xhr.send();
+  }
 
-markdownLinkCheck('[example](http://example.com)', function (err, results) {
-    if (err) {
-        console.error('Error//////////', err);
-        return;
-    }
-    results.forEach(function (result) {
-        console.log('%s is %s //////////////', result.link, result.status);
-    });
-});
+  urlExists(someUrl, function(exists) {
+    console.log('"%s" exists?', someUrl, exists);
+  })
+} catch (error) {
+  //   // If an error is thrown, core.setFailed(error.message); uses the actions toolkit @actions/core package to log a message and set a failing exit code.
+    core.setFailed(error.message);
+  }
+
+
+
+
+
+
+
+
+// ///////////////////////Markdown-linl-checker//////////////////////////////////
+// 'use strict';
+
+// var markdownLinkCheck = require('markdown-link-check');
+
+// markdownLinkCheck('[example](http://example.com)', function (err, results) {
+//     if (err) {
+//         console.error('Error//////////', err);
+//         return;
+//     }
+//     results.forEach(function (result) {
+//         console.log('%s is %s //////////////', result.link, result.status);
+//     });
+// });
