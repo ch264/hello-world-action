@@ -6,7 +6,7 @@ const github = require('@actions/github');
 try {
   // `who-to-greet` input defined in action metadata file
   const nameToGreet = core.getInput('who-to-greet');
-  console.log(`Hello ${nameToGreet}!`);
+  console.log(`Hi there ${nameToGreet}!`);
   
   const time = (new Date()).toTimeString();
   
@@ -17,7 +17,7 @@ try {
   (github.context.payload, undefined, 2)
   
   console.log(`The event payload: ${payload}`);
-  
+
 } catch (error) {
   // If an error is thrown, core.setFailed(error.message); uses the actions toolkit @actions/core package to log a message and set a failing exit code.
   core.setFailed(error.message);
