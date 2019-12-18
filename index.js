@@ -18,6 +18,7 @@ try {
   
   console.log(`The event payload: ${payload}`);
 
+  console.log('/////////////////here is the end of try')
 } catch (error) {
   // If an error is thrown, core.setFailed(error.message); uses the actions toolkit @actions/core package to log a message and set a failing exit code.
   core.setFailed(error.message);
