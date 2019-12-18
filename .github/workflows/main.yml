@@ -9,7 +9,7 @@ jobs:
       id: hello
       uses: actions/hello-world-javascript-action@v1
       with:
-        who-to-greet: 'Mona the Octocat'
+        who-to-greet: 'Christina'
     # Use the output from the `hello` step
     - name: Get the output time
       run: echo "The time was ${{ steps.hello.outputs.time }}"
