@@ -1,3 +1,6 @@
+
+# run in another repo
+
 # on: [push]
 
 # jobs:
@@ -13,7 +16,9 @@
 #     # Use the output from the `hello` step
 #     - name: Get the output time
 #       run: echo "The time was ${{ steps.hello.outputs.time }}
-      
+
+
+  # run in my own repo
 on: [push]
 
 jobs:
