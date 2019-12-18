@@ -1,16 +1,16 @@
 # This action uses the toolkit to get the who-to-greet input variable required in the action's metadata file and prints "Hello [who-to-greet]" in a debug message in the log
 
-name: 'Hello World'
-description: 'Greet someone and record the time'
-inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
-    required: true
-    default: 'World'
-outputs:
-  # the script gets the current time and sets it as an output variable that actions running later in a job can use.
-  time: # id of output
-    description: 'The time we greeted you'
-runs:
-  using: 'node12'
-  main: 'index.js'
+# name: 'Hello World'
+# description: 'Greet someone and record the time'
+# inputs:
+#   who-to-greet:  # id of input
+#     description: 'Who to greet'
+#     required: true
+#     default: 'World'
+# outputs:
+#   # the script gets the current time and sets it as an output variable that actions running later in a job can use.
+#   time: # id of output
+#     description: 'The time we greeted you'
+# runs:
+#   using: 'node12'
+#   main: 'index.js'
