@@ -38,4 +38,4 @@ jobs:
       - name: Get the output time
         run: echo "The time was ${{ steps.hello.outputs.time }}"
       - name: markdown-link-check
-        run: find ./README.md -name \*.md -exec markdown-link-check {} \;
+        run: markdown-link-check ./README.md

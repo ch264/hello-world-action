@@ -1,6 +1,6 @@
 # hello-world-action in JavaScript
 
-I am writing an action from scratch using this md link checker: https://github.com/tcort/markdown-link-check
+I am writing an action from scratch using this md link checker: <https://github.com/tcort/markdown-link-check>
 
 A readme for a Github Action should contain the following:
 A detailed description of what the action does.
