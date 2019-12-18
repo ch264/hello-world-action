@@ -1,24 +1,6 @@
 
 # run in another repo
 
-on: [push]
-
-jobs:
-  hello_world_job:
-    runs-on: ubuntu-latest
-    name: A job to say hello
-    steps:
-    - name: Hello world action step
-      id: hello
-      uses: actions/hello-world-action@v1
-      with:
-        who-to-greet: 'Christina'
-    # Use the output from the `hello` step
-    - name: Get the output time
-      run: echo "The time was ${{ steps.hello.outputs.time }}"
-
-
-#   # run in my own repo
 # on: [push]
 
 # jobs:
@@ -26,14 +8,34 @@ jobs:
 #     runs-on: ubuntu-latest
 #     name: A job to say hello
 #     steps:
-#       # To use this repository's private action, you must check out the repository
-#       - name: Checkout
-#         uses: actions/checkout@v1
-#       - name: Hello world action step
-#         uses: ./ # Uses an action in the root directory
-#         id: hello
-#         with:
-#           who-to-greet: 'Mona the Octocat'
-#       # Use the output from the `hello` step
-#       - name: Get the output time
-#         run: echo "The time was ${{ steps.hello.outputs.time }}"
+#     - name: Hello world action step
+#       id: hello
+#       uses: actions/hello-world-action@v1
+#       with:
+#         who-to-greet: 'Christina'
+#     # Use the output from the `hello` step
+#     - name: Get the output time
+#       run: echo "The time was ${{ steps.hello.outputs.time }}"
+
+
+#   # run in my own repo
+on: [push]
+
+jobs:
+  hello_world_job:
+    runs-on: ubuntu-latest
+    name: A job to say hello
+    steps:
+      # To use this repository's private action, you must check out the repository
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: Hello world action step
+        uses: ./ # Uses an action in the root directory
+        id: hello
+        with:
+          who-to-greet: 'Mona the Octocat'
+      # Use the output from the `hello` step
+      - name: Get the output time
+        run: echo "The time was ${{ steps.hello.outputs.time }}"
+      - name: markdown-link-check
+        run: find ./README.md -name \*.md -exec markdown-link-check {} \;
