@@ -3,23 +3,37 @@
 const core = require('@actions/core');
 const github = require('@actions/github');
 
-try {
-  // `who-to-greet` input defined in action metadata file
-  const nameToGreet = core.getInput('who-to-greet');
-  console.log(`Hi there ${nameToGreet}!`);
+// try {
+//   // `who-to-greet` input defined in action metadata file
+//   const nameToGreet = core.getInput('who-to-greet');
+//   console.log(`Hi there ${nameToGreet}!`);
   
-  const time = (new Date()).toTimeString();
+//   const time = (new Date()).toTimeString();
   
-  core.setOutput("time", time);
-  // Get the JSON webhook payload for the event that triggered the workflow
-  // const payload = JSON.stringify
+//   core.setOutput("time", time);
+//   // Get the JSON webhook payload for the event that triggered the workflow
+//   // const payload = JSON.stringify
   
-  // (github.context.payload, undefined, 2)
+//   // (github.context.payload, undefined, 2)
   
-  // console.log(`The event payload: ${payload}`);
+//   // console.log(`The event payload: ${payload}`);
 
-  console.log(`/////////////////here is the end of try`);
-} catch (error) {
-  // If an error is thrown, core.setFailed(error.message); uses the actions toolkit @actions/core package to log a message and set a failing exit code.
-  core.setFailed(error.message);
-}
+//   console.log(`/////////////////here is the end of try`);
+// } catch (error) {
+//   // If an error is thrown, core.setFailed(error.message); uses the actions toolkit @actions/core package to log a message and set a failing exit code.
+//   core.setFailed(error.message);
+// }
+
+'use strict';
+
+var markdownLinkCheck = require('markdown-link-check');
+
+markdownLinkCheck('[example](http://example.com)', function (err, results) {
+    if (err) {
+        console.error('Error//////////', err);
+        return;
+    }
+    results.forEach(function (result) {
+        console.log('%s is %s //////////////', result.link, result.status);
+    });
+});

@@ -1,6 +1,6 @@
 # hello-world-action in JavaScript
 
-I am writin an action from scratch
+I am writing an action from scratch using this md link checker: https://github.com/tcort/markdown-link-check
 
 A readme for a Github Action should contain the following:
 A detailed description of what the action does.
@@ -31,3 +31,6 @@ The time we greeted you.
 uses: actions/hello-world-action@v1
 with:
   who-to-greet: 'Mona the Octocat'
+
+  <https://learning.getpostman.com/>
+  <https://learning.getpostman.com/dddrreee>
