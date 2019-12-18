@@ -19,4 +19,4 @@
 #   main: 'index.js'
 
 name: 'link checker'
-runs: index.js
+runs: ./index.js
